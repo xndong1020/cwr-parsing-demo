@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[packages]
+music-metadata-edi = "*"
+luigi = "*"
+pandas = "*"
+numpy = "*"
+
+[packages.cwr_parser_pack]
+git = "https://github.com/xndong1020/cwr_parser_pack.git"
