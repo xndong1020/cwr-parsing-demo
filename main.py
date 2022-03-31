@@ -25,8 +25,8 @@ class ValidateJsonFile(Task):
     def requires(self):
         return DownloadParsedJson()
 
-    # def output(self):
-    #     return LocalTarget("errors.json")
+    def output(self):
+        return LocalTarget("errors.json")
 
     def run(self):
         with self.input().open() as json_file:
@@ -60,8 +60,11 @@ class ValidateJsonFile(Task):
                 if fields_errors is not None:
                     all_fields_errors = fields_errors
 
-            # with self.output().open("w") as f:
-            #     json.dump([v.toJson() for k, v in all_fields_errors], f)
+            with self.output().open("w") as f:
+                for k, v in all_fields_errors.items():
+                    for err in v:
+                        print(err.toJson())
+                        f.write(err.toJson())
 
 
 if __name__ == "__main__":
