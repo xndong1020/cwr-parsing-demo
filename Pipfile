@@ -4,15 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.9"
 
 [packages]
-music-metadata-edi = "*"
-luigi = "*"
-pandas = "*"
-numpy = "*"
-
-[packages.cwr_parser_pack]
-git = "https://github.com/xndong1020/cwr_parser_pack.git"
+music-metadata-edi = "==20.8"
+luigi = "==3.0.3"
+pandas = "==1.4.1"
+numpy = "==1.22.3"
+cwr-parser-pack = {git = "https://github.com/xndong1020/cwr_parser_pack.git"}

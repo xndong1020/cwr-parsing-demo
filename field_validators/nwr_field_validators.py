@@ -6,7 +6,6 @@ def work_title_is_required(obj: Nwr) -> Error:
     """
     1. Work Title must be entered. (TR)
     """
-    print("work_title", obj.work_title)
     if not obj.work_title:
         return Error("work_title is missing.", "TR")
 
